@@ -1,77 +1,76 @@
-<div class="playstats">
-<h4>Bidder Details</h4>
-<div class="name" ng-model="user.user_name">
-    Name:<b>{{user.user_name}}</b>
-    </div>
-<div class="coins" ng-model="user.balance">
-    Balance:<b>{{user.balance}}</b>
-    </div>
-     
-</div>
+<div id="auctionScreen" class="acution-cntr"> 
+	<div class="playstats">
+		<div class="name" ng-model="user.user_name">
+			User: {{user.user_name}}
+		</div>
+		<div class="coins" ng-model="user.balance">
+			Balance:{{user.balance}}
+		</div>
+		 
+	</div>
 
 
 
+	<div class="auction-details">
+		<div class="inventory panel">
+			<h4>Inventory</h4>
+			<div ng-repeat='inventory in user.inventory' class="inventory-item">
+				<div class="item_name" style="display: inline-block;">
+		   <b> {{inventory.item_name}}</b>
+				</div>
+				<div class="quantity" style="display: inline-block;" >
+				{{inventory.quantity}}
+				</div>
+				&nbsp;
+			   <input type="button" class="btn-success inventory-btn" value="Start Bidding"  ng-click="startAuction(user,inventory.item_name);"/>
+				<br>
+				<br>
+			</div>     
+		</div>
 
-<div class="inventory">
-    <h4>Inventory</h4>
-    <div ng-repeat='inventory in user.inventory'>
-        <div class="item_name" style="display: inline-block;">
-   <b> {{inventory.item_name}}</b>
-        </div>
-        <div class="quantity" style="display: inline-block;" >
-        {{inventory.quantity}}
-        </div>
-        &nbsp;
-       <input type="button" class="btn-success" value="Start Bidding"  ng-click="startAuction(user,inventory.item_name);"/>
-        <br>
-        <br>
-    </div>     
-</div>
+		<div class="current_auction panel" >
+			<h4>Current Auction</h4>
+			<div ng-hide="auction" ng-model="auction">No auction at the moment</div>
+			 <div ng-show="auction" ng-model="auction">
+				<!-- <div class="seller_name" style="display: inline-block;">
+					Bidder Name:<b>
+					 {{current_user.user_name}}
+					 </b>
+				 </div>-->
+				 <div class="item_name" style="display: inline-block;">
+					 Item:<b>{{current_user.item_name}}</b>
+				 </div>
+			   <!--  <br>
+				 <div class="quantity" style="display: inline-block;">
+					 Quantity:
+					<b>{{current_user.quantity}}</b>
+				 </div>-->
+				 <br>
+				  <div class="minimum_bid" style="display: inline-block;"  ng-model="current_bid" ng-hide="winning_bid">
+					 Inital Bid:
+					  <b>{{current_user.minimum_bid}}</b>
+				 </div>
+				 <div class="minimum_bid" style="display: inline-block;" ng-model="current_bid" ng-show="winning_bid">
+					 Winning Bid:
+					 <b>{{current_user.winning_bid}}</b>
+				 </div>
+				 <br>
+				 <div  style="display: inline-block;" ng-model="winning_user" ng-show="winning_bid">
+					 Highest Bidder:
+					 <b>{{winning_user.user_name}}</b>
+				 </div>
+				 <br>
+				 <div class="seller_name" style="display: inline-block;" ng-hide="winning_bid">
+					Initial Bidder:<b>
+					 {{current_user.user_name}}
+					 </b>
+				 </div>
+				 <br>
+				 <div style="display: inline-block;">Time in Seconds:</div><div class="time" ng-model="time" style="display: inline-block;"><b>{{time}}</b></div>
+				 <input type="text" value="{{current_user.winning_bid}}" ng-model="mybid"/>
+				 <input type="button" class="btn-info place_bid_btn" value="Place a bid"  ng-click="placeBid()"/>
+			</div>
+		</div>
+	</div>
 
-
-
-
-
-<div class="current_auction" >
-<h4>Current Auction</h4>
-    <div ng-hide="auction" ng-model="auction">No auction at the moment</div>
-     <div ng-show="auction" ng-model="auction">
-        <!-- <div class="seller_name" style="display: inline-block;">
-            Bidder Name:<b>
-             {{current_user.user_name}}
-             </b>
-         </div>-->
-         <div class="item_name" style="display: inline-block;">
-             Item:<b>{{current_user.item_name}}</b>
-         </div>
-       <!--  <br>
-         <div class="quantity" style="display: inline-block;">
-             Quantity:
-            <b>{{current_user.quantity}}</b>
-         </div>-->
-         <br>
-          <div class="minimum_bid" style="display: inline-block;"  ng-model="current_bid" ng-hide="winning_bid">
-             Inital Bid:
-              <b>{{current_user.minimum_bid}}</b>
-         </div>
-         <div class="minimum_bid" style="display: inline-block;" ng-model="current_bid" ng-show="winning_bid">
-             Winning Bid:
-             <b>{{current_user.winning_bid}}</b>
-         </div>
-         <br>
-         <div  style="display: inline-block;" ng-model="winning_user" ng-show="winning_bid">
-             Highest Bidder:
-             <b>{{winning_user.user_name}}</b>
-         </div>
-         <br>
-         <div class="seller_name" style="display: inline-block;" ng-hide="winning_bid">
-            Initial Bidder:<b>
-             {{current_user.user_name}}
-             </b>
-         </div>
-         <br>
-         <div style="display: inline-block;">Time in Seconds:</div><div class="time" ng-model="time" style="display: inline-block;"><b>{{time}}</b></div>
-         <input type="text" value="{{current_user.winning_bid}}" ng-model="mybid"/>
-         <input type="button" class="btn-info" value="Place a bid"  ng-click="placeBid()"/>
-    </div>
 </div>

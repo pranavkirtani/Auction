@@ -5,7 +5,7 @@ body {
 /* index.html */
 .bidme-header {
 	position: fixed;
-	height: 35px;
+	height: 40px;
 	width: 100%;
 	background-color: #2E2F31;
 	top:0;
@@ -39,6 +39,7 @@ body {
 	height: 35px;
 	margin-bottom: 10px;
 	text-indent: 5px;
+	border-radius: 3px;
 }
 
 .login-btn {
@@ -47,33 +48,89 @@ body {
 }
 
 /* login screen - end */
-	
+
+/* auction screen */
+#auctionScreen.acution-cntr {
+	margin-top: 70px;
+    padding: 0 30px;
+	color: white;
+}
+
+.playstats {
+    background: #3e4649 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    margin-left: 85%;
+    margin-right: 0;
+    margin-top: 3px;
+    padding: 0 15px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+}
+
+#auctionScreen .name {
+	text-decoration: capitalize;
+}
+#auctionScreen .coins {
+}
+
 .inventory{
-       float: left;
-    margin-left: 25%;
-    margin-top: -20%;
-    border: 1px solid black;
-    width: 30%;
-        text-align: center;
+    float: left;           
+    text-align: center;
 }
-.current_auction{
-     margin-left: 62%;
-    margin-top: -20%;
-    border: 1px solid black;
-    width: 20%;
-    height: 42%;
+.current_auction{ 
+    height: 50%;
+	float: left;
+	margin-left: 20px;
 }
-.playstats{
-    margin-top: 4%;
-    border: 1px solid black;
-    width: 12%;
-    height: 42%;
-        text-align: center;
+
+.panel {
+  background: #2E2F31 none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 3px;
+  padding: 10px;
+  width: 48%;
 }
+
+.inventory-item {
+  background: #3e4649 none repeat scroll 0 0;
+  border-radius: 3px;
+  height: 40px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.inventory-btn {  
+  float: right;
+
+}
+
+#auctionScreen input {
+	border-radius: 3px;  
+	height: 30px;
+}
+
+.place_bid_btn {
+	float: right;
+}
+
+.time {
+	color: red;
+	
+}
+
+/* auction screen - end */
+	
+
+
 .quantity{
    /*margin-left: 21%;*/
 }
 .item_name{
+width:11%
+}.item_name{
 width:11%
 }
 h1{
