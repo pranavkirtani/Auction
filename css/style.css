@@ -1,3 +1,53 @@
+body {
+	background-color: #3E4649;
+}
+
+/* index.html */
+.bidme-header {
+	position: fixed;
+	height: 35px;
+	width: 100%;
+	background-color: #2E2F31;
+	top:0;
+}
+
+.logo {
+    color: #fdb53f;
+    float: left;
+    font-size: 1.5em;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.pg-cntr {
+	margin-top: 35px;
+}
+/* end index.html */
+
+/* login screen */
+#loginScreen.login-form-cntr {
+	width: 300px;
+	padding: 10px;
+	margin: 80px auto 0 auto;
+	height: 145px;
+	background-color: #2E2F31;
+}
+
+#loginScreen input {
+	float: left;
+	width: 100%;
+	height: 35px;
+	margin-bottom: 10px;
+	text-indent: 5px;
+}
+
+.login-btn {
+	
+	margin-bottom: 0;
+}
+
+/* login screen - end */
+	
 .inventory{
        float: left;
     margin-left: 25%;
@@ -28,7 +78,4 @@ width:11%
 }
 h1{
 text-align: center
-}
-.loginname{
-margin-left:36%
 }
